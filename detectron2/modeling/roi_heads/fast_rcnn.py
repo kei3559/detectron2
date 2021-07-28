@@ -189,8 +189,7 @@ def fast_rcnn_inference_single_image(
     nms_thresh: float,
     topk_per_image: int,
 ):
-    """
-    """
+
     Single-image inference. Return bounding-box detection results by thresholding
     on scores and applying non-maximum suppression (NMS).
 
@@ -200,8 +199,7 @@ def fast_rcnn_inference_single_image(
 
     Returns:
         Same as `fast_rcnn_inference`, but for only one image.
-    """
-    """
+
     valid_mask = torch.isfinite(boxes).all(dim=1) & torch.isfinite(scores).all(dim=1)
     if not valid_mask.all():
         boxes = boxes[valid_mask]
